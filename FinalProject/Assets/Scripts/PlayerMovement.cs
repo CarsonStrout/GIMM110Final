@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region COMPONENTS
     private Rigidbody2D rb;
     private BoxCollider2D coll;
+    #endregion
 
-    private float dirX = 0f;
+    #region STATE PARAMETERS
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 14f;
-
     [SerializeField] private float maxSpeed = 25f;
+    #endregion
 
-    private bool moveLeft;
-    private bool moveRight;
-    private float buttonMove;
+    #region INPUT PARAMETERS
+    public bool MoveLeft { get; private set; }
+    public bool MoveRight { get; private set; }
+    public float ButtonMove { get; private set; }
+    #endregion
 
+    #region LAYERS & TAGS
     [SerializeField] private LayerMask jumpableGround;
+    #endregion
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
-        moveLeft = false;
-        moveRight = false;
+        MoveLeft = false;
+        MoveRight = false;
     }
 
     private void Update()
@@ -34,52 +40,53 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
         }
 
-        dirX = Input.GetAxisRaw("Horizontal");
-
+        #region INPUT HANDLER
         Movement();
-     
-        rb.velocity = new Vector2(buttonMove, rb.velocity.y);
+
+        rb.velocity = new Vector2(ButtonMove, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+        #endregion
     }
 
+    #region MOVEMENT METHODS
     public void LeftButtonDown()
     {
-        moveLeft = true;
+        MoveLeft = true;
     }
 
     public void LeftButtonUp()
     {
-        moveLeft = false;
+        MoveLeft = false;
     }
 
     public void RightButtonDown()
     {
-        moveRight = true;
+        MoveRight = true;
     }
 
     public void RightButtonUp()
     {
-        moveRight = false;
+        MoveRight = false;
     }
 
     public void Movement()
     {
-        if (moveLeft)
+        if (MoveLeft)
         {
-            buttonMove = -moveSpeed;
+            ButtonMove = -moveSpeed;
         }
-        else if (moveRight)
+        else if (MoveRight)
         {
-            buttonMove = moveSpeed;
+            ButtonMove = moveSpeed;
         }
         else
         {
             
-            buttonMove = 0;
+            ButtonMove = 0;
         }
     }
     public void Jump()
@@ -89,9 +96,12 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
+    #endregion
 
+    #region CHECK METHODS
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
+    #endregion
 }
