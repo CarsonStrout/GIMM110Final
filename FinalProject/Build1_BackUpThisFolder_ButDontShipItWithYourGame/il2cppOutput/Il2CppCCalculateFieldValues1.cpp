@@ -27688,28 +27688,26 @@ struct LoadCharacter_t778B7472A84FE42058C57D59BD3DC781757BD22D  : public MonoBeh
 // PlayerMovement
 struct PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// System.Single PlayerMovement::scaleSpeed
-	float ___scaleSpeed_4;
 	// UnityEngine.Rigidbody2D PlayerMovement::rb
-	Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* ___rb_5;
+	Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* ___rb_4;
 	// UnityEngine.BoxCollider2D PlayerMovement::coll
-	BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* ___coll_6;
+	BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* ___coll_5;
 	// System.Single PlayerMovement::dirX
-	float ___dirX_7;
+	float ___dirX_6;
 	// System.Single PlayerMovement::moveSpeed
-	float ___moveSpeed_8;
+	float ___moveSpeed_7;
 	// System.Single PlayerMovement::jumpForce
-	float ___jumpForce_9;
+	float ___jumpForce_8;
 	// System.Single PlayerMovement::maxSpeed
-	float ___maxSpeed_10;
+	float ___maxSpeed_9;
 	// System.Boolean PlayerMovement::moveLeft
-	bool ___moveLeft_11;
+	bool ___moveLeft_10;
 	// System.Boolean PlayerMovement::moveRight
-	bool ___moveRight_12;
+	bool ___moveRight_11;
 	// System.Single PlayerMovement::buttonMove
-	float ___buttonMove_13;
+	float ___buttonMove_12;
 	// UnityEngine.LayerMask PlayerMovement::jumpableGround
-	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___jumpableGround_14;
+	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___jumpableGround_13;
 };
 
 // UnityEngine.Experimental.Rendering.ProbeVolume
@@ -35233,9 +35231,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5178[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5179[2] = 
 {
 	static_cast<int32_t>(offsetof(LoadCharacter_t778B7472A84FE42058C57D59BD3DC781757BD22D, ___spriteRenderer_4)),static_cast<int32_t>(offsetof(LoadCharacter_t778B7472A84FE42058C57D59BD3DC781757BD22D, ___colors_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5180[11] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5180[10] = 
 {
-	static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___scaleSpeed_4)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___rb_5)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___coll_6)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___dirX_7)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___moveSpeed_8)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___jumpForce_9)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___maxSpeed_10)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___moveLeft_11)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___moveRight_12)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___buttonMove_13)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___jumpableGround_14)),};
+	static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___rb_4)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___coll_5)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___dirX_6)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___moveSpeed_7)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___jumpForce_8)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___maxSpeed_9)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___moveLeft_10)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___moveRight_11)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___buttonMove_12)),static_cast<int32_t>(offsetof(PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351, ___jumpableGround_13)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5182[3] = 
 {
 	static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___IsTextualNodeBitmap_0)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___CanReadContentAsBitmap_1)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___HasValueBitmap_2)),};

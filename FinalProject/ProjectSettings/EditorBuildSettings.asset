@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Character Selector.unity
     guid: d71b72e091db7d74db67794f2cf14fbb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AR_Scene.unity
     guid: f5aede92eb3f42140ba14faab0ff3162
   m_configObjects:

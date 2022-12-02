@@ -23,14 +23,17 @@ public class ARCursor : MonoBehaviour
         {
             UpdateCursor();
         }
+        else
+        {
+            cursorChildObject.SetActive(false);
+        }
 
         if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !gamePlaced)
         {
             if(useCursor)
             {
-                GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
+                GameObject.Instantiate(objectToPlace, transform.position, new Quaternion(0f, transform.rotation.y, 0f, 1));
                 gamePlaced = true;
-                useCursor = false;
             }
             else
             {
@@ -38,13 +41,12 @@ public class ARCursor : MonoBehaviour
                 raycastManager.Raycast(Input.GetTouch(0).position, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
                 if(hits.Count > 0)
                 {
-                    GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
+                    GameObject.Instantiate(objectToPlace, hits[0].pose.position, new Quaternion(0f, hits[0].pose.rotation.y, 0f, 1));
                     gamePlaced = true;
                     useCursor = false;
                 }
             }
             gamePlaced = true;
-            useCursor = false;
         }
     }
 

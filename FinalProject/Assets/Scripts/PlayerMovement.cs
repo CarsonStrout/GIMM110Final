@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float scaleSpeed;
-
     private Rigidbody2D rb;
     private BoxCollider2D coll;
 
@@ -27,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         moveLeft = false;
         moveRight = false;
-
-        scaleSpeed = .075f;
     }
 
     private void Update()
@@ -42,11 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
         Movement();
      
-        rb.velocity = new Vector2(buttonMove * scaleSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(buttonMove , rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce * scaleSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
@@ -90,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce * scaleSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
