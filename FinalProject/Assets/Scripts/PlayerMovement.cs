@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
 
     private float dirX = 0f;
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
     [SerializeField] private float maxSpeed = 25f;
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         Movement();
      
-        rb.velocity = new Vector2(buttonMove , rb.velocity.y);
+        rb.velocity = new Vector2(buttonMove, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

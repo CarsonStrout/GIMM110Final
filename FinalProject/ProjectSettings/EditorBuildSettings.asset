@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Character Selector.unity
+    path: Assets/Scenes/Character_Selector.unity
     guid: d71b72e091db7d74db67794f2cf14fbb
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/AR_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: Assets/Scenes/AR_Scene.unity
