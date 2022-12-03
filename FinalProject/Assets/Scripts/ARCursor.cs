@@ -34,6 +34,7 @@ public class ARCursor : MonoBehaviour
             {
                 GameObject.Instantiate(objectToPlace, transform.position, new Quaternion(0f, transform.rotation.y, 0f, 1));
                 gamePlaced = true;
+                useCursor = false;
             }
             else
             {
@@ -47,6 +48,7 @@ public class ARCursor : MonoBehaviour
                 }
             }
             gamePlaced = true;
+            useCursor = false;
         }
     }
 
