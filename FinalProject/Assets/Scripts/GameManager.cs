@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public bool player1Finish = false;
     public bool player2Finish = false;
 
-    public int previousPlacement = -1;
+    public int previousPlacement;
 
     public void PlayerTurns()
     {

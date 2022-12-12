@@ -12,6 +12,7 @@ public class ARCursor : MonoBehaviour
     public GameObject gamePlaneToPlace;
     public GameObject[] prefabToPlace;
     public ARRaycastManager raycastManager;
+    public ARPlaneManager planeManager;
 
     public TurnUIScript turnUI;
 
@@ -79,6 +80,8 @@ public class ARCursor : MonoBehaviour
             gamePlaced = true;
             useGameCursor = false;
             gameCursorChildObject.SetActive(useGameCursor);
+            planeManager.planePrefab.SetActive(useGameCursor);
+            gameManager.previousPlacement = 1;
             turnUI.PlaceGame.SetActive(false);
             turnUI.PreTurn1();
         }
