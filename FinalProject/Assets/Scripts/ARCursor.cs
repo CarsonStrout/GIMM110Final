@@ -24,6 +24,7 @@ public class ARCursor : MonoBehaviour
 
     void Start()
     {
+        planeManager.planePrefab.SetActive(false);
         gameCursorChildObject.SetActive(useGameCursor);
         objectCursorChildObject.SetActive(canPlaceObstacle);
         controlUI.SetActive(false);
@@ -80,7 +81,6 @@ public class ARCursor : MonoBehaviour
             gamePlaced = true;
             useGameCursor = false;
             gameCursorChildObject.SetActive(useGameCursor);
-            planeManager.planePrefab.SetActive(useGameCursor);
             gameManager.previousPlacement = 1;
             turnUI.PlaceGame.SetActive(false);
             turnUI.PreTurn1();
