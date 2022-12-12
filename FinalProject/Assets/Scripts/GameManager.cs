@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
             player2.SetActive(false);
             controlUI.SetActive(false);
             turnUI.PlaceObject1.SetActive(true);
+            cursor.created = false;
+            cursor.unplaced = true;
             cursor.canPlaceObstacle = true;
         }
         else if (turn == 3) //player2 placement turn
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
             player2.SetActive(false);
             controlUI.SetActive(false);
             turnUI.PlaceObject2.SetActive(true);
+            cursor.created = false;
+            cursor.unplaced = true;
             cursor.canPlaceObstacle = true;
         }
         else if (turn == 4) //player1 win
