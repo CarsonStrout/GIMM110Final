@@ -32,7 +32,6 @@ public class ARCursor : MonoBehaviour
         gameCursorChildObject.SetActive(useGameCursor);
         objectCursorChildObject.SetActive(canPlaceObstacle);
         controlUI.SetActive(false);
-        turnUI.PlaceGame.SetActive(true);
     }
 
     void Update()
@@ -74,6 +73,7 @@ public class ARCursor : MonoBehaviour
 
     void GamePlace()
     {
+        turnUI.PlaceGame.SetActive(true);
         UpdateGameCursor();
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !gamePlaced)

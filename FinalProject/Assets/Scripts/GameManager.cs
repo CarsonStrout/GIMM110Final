@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public ARCursor cursor;
     public TurnUIScript turnUI;
     public GameObject controlUI;
+    public PlayerMovement movement1;
+    public PlayerMovement movement2;
 
     public int turn = 0; //0 is player1 turn, 1 is player2 turn, 2 is player1 placement, 3 is player2 placement, 4 is player1 win, 5 is player2 win, 6 is tie game
 
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
         {
             player1Death = false;
             player1Finish = false;
+            movement1.LeftButtonUp();
+            movement1.RightButtonUp();
 
             player2.SetActive(false);
             turnUI.PreTurn1();
@@ -38,6 +42,8 @@ public class GameManager : MonoBehaviour
         {
             player2Death = false;
             player2Finish = false;
+            movement2.LeftButtonUp();
+            movement2.RightButtonUp();
 
             player1.SetActive(false);
             turnUI.PreTurn2();
