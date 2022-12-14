@@ -5,10 +5,10 @@ using UnityEngine;
 public class XbowScript : MonoBehaviour
 {
     public GameObject bullet;
-    public GameObject spawnRight;
-    public GameObject spawnLeft;
+    public GameObject spawnPosition;
 
     public bool canShoot = true;
+    public bool moveRight;
 
     void Start()
     {
@@ -28,8 +28,15 @@ public class XbowScript : MonoBehaviour
     {
         if (canShoot == true)
         {
-            GameObject go = GameObject.Instantiate(bullet, spawnLeft.transform.position, Quaternion.identity);
-            go.GetComponent<Bullet>().xSpeed = -7.0f;
+            GameObject go = GameObject.Instantiate(bullet, spawnPosition.transform.position, Quaternion.identity);
+            if (moveRight)
+            {
+                go.GetComponent<Bullet>().xSpeed = 7.0f;
+            }
+            else
+            {
+                go.GetComponent<Bullet>().xSpeed = -7.0f;
+            }
             canShoot = false;
             StartCoroutine(Timer());
             StopCoroutine(Timer());

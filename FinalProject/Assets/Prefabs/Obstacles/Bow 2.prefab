@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375800480713914029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.88, y: 0, z: 0}
+  m_LocalPosition: {x: 0.88, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 375800480815775030}
   - component: {fileID: 5224793011015331561}
   m_Layer: 3
-  m_Name: Bow
+  m_Name: Bow 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 506edabc3bc4d5f429177e1cdcedb614, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 7.24, y: 7.48}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3317dd876ac9bfe4ea106811870675a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8615273603861464657, guid: 3da6609e6ee8bac49b2ec75e1aa24cc1, type: 3}
+  bullet: {fileID: 8615273603861464657, guid: 272fdeca9249cc24fa08720222c79392, type: 3}
   spawnPosition: {fileID: 375800480713914029}
   canShoot: 1
-  moveRight: 0
+  moveRight: 1

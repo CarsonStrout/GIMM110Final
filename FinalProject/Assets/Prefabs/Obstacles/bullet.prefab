@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4741541516814400523}
   - component: {fileID: 8517600144558265408}
   - component: {fileID: 7606540620172686705}
+  - component: {fileID: 4268844273140559033}
   - component: {fileID: 7824175502552444803}
   - component: {fileID: 3125378402965449864}
   m_Layer: 3
@@ -108,6 +109,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &4268844273140559033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615273603861464657}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08161521, y: 0.11129367}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.18, y: 1.41}
+    newSize: {x: 5.18, y: 1.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.853539, y: 0.6086849}
+  m_EdgeRadius: 0
 --- !u!58 &7824175502552444803
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,7 +142,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8615273603861464657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
