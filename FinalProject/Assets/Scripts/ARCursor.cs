@@ -7,22 +7,18 @@ using UnityEngine.XR.ARFoundation;
 public class ARCursor : MonoBehaviour
 {
     public GameObject gameCursorChildObject;
-    public GameObject objectCursorChildObject;
     public GameObject controlUI;
     public GameObject gamePlaneToPlace;
     public GameObject[] prefabToPlace;
     public ARRaycastManager raycastManager;
     public ARPlaneManager planeManager;
-
     public TurnUIScript turnUI;
-
     public GameManager gameManager;
 
     public bool useGameCursor = true;
     public bool gamePlaced = false;
     public bool canPlaceObstacle = false;
     public bool created = false;
-    public bool unplaced = true;
 
     private GameObject obj;
 
@@ -30,20 +26,20 @@ public class ARCursor : MonoBehaviour
     {
         planeManager.planePrefab.SetActive(false);
         gameCursorChildObject.SetActive(useGameCursor);
-        objectCursorChildObject.SetActive(canPlaceObstacle);
         controlUI.SetActive(false);
     }
 
     void Update()
     {
-        if (gamePlaced == false)
+        if (!gamePlaced)
         {
             GamePlace();
         }
-        if (gamePlaced == true && canPlaceObstacle)
+        if (canPlaceObstacle)
         {
             ObstaclePlace();
         }
+
     }
 
     void UpdateGameCursor()
@@ -93,50 +89,30 @@ public class ARCursor : MonoBehaviour
 
     void ObstaclePlace()
     {
-        //objectCursorChildObject.SetActive(canPlaceObstacle);
         UpdateObstacleCursor();
 
-        /*if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && gamePlaced)
+        if (!created)
         {
-            if (canPlaceObstacle)
-            {
-                GameObject.Instantiate(prefabToPlace[Random.Range(0, prefabToPlace.Length)], GetPrefabPosition(), GetPrefabRotation());
-            }
-            canPlaceObstacle = false;
-            objectCursorChildObject.SetActive(canPlaceObstacle);
-            turnUI.PlaceObject1.SetActive(false);
-            turnUI.PlaceObject2.SetActive(false);
-            gameManager.turn = 0;
-            gameManager.PlayerTurns();
-        }*/
-        
-        
-        if (canPlaceObstacle)
-        {
-            if(unplaced)
-            {
-                if (!created)
-                {
-                    obj = prefabToPlace[Random.Range(0, prefabToPlace.Length)];
-                    GameObject.Instantiate(obj, GetPrefabPosition(), GetPrefabRotation());
-                    created = true;
-                }
-                obj.transform.position = GetPrefabPosition();
-                obj.transform.rotation = GetPrefabRotation();
-            }
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && gamePlaced)
-            {
-                unplaced = false;
-                canPlaceObstacle = false;
-                objectCursorChildObject.SetActive(canPlaceObstacle);
-                turnUI.PlaceObject1.SetActive(false);
-                turnUI.PlaceObject2.SetActive(false);
-                gameManager.turn = 0;
-                gameManager.PlayerTurns();
-            }
-            
+            obj = GameObject.Instantiate(prefabToPlace[Random.Range(0, prefabToPlace.Length)], GetPrefabPosition(), GetPrefabRotation());
+            created = true;
         }
-        
+
+        obj.transform.position = GetPrefabPosition();
+        obj.transform.rotation = GetPrefabRotation();
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            GameManagerPostPlacement();
+        }
+    }
+
+    private void GameManagerPostPlacement()
+    {
+        canPlaceObstacle = false;
+        turnUI.PlaceObject1.SetActive(false);
+        turnUI.PlaceObject2.SetActive(false);
+        gameManager.turn = 0;
+        gameManager.PlayerTurns();
     }
 
     private Vector3 GetPrefabPosition()
