@@ -10,6 +10,9 @@ public class ARCursor : MonoBehaviour
     public GameObject controlUI;
     public GameObject gamePlaneToPlace;
     public GameObject[] prefabToPlace;
+
+    private GameObject obj;
+
     public ARRaycastManager raycastManager;
     public ARPlaneManager planeManager;
     public TurnUIScript turnUI;
@@ -20,7 +23,6 @@ public class ARCursor : MonoBehaviour
     public bool canPlaceObstacle = false;
     public bool created = false;
 
-    private GameObject obj;
 
     void Start()
     {

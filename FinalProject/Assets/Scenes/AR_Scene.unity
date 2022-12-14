@@ -6783,6 +6783,7 @@ MonoBehaviour:
   - {fileID: 375800480815775024, guid: 4ed33a7702bd7ef458d841b240fd3429, type: 3}
   - {fileID: 3057239320176092068, guid: c9003344827a10f4297bcd8d3baf4e83, type: 3}
   - {fileID: 8615273603861464657, guid: b7a10afdfa1ef864caa85e88f39dba7e, type: 3}
+  - {fileID: 5776759787783033257, guid: 1c80e06aa59821e4186bde0c135c8d16, type: 3}
   raycastManager: {fileID: 1162141101}
   planeManager: {fileID: 1162141102}
   turnUI: {fileID: 1828538383}
@@ -7149,9 +7150,9 @@ MonoBehaviour:
   player1: {fileID: 1057909140}
   player2: {fileID: 1136382013}
   spawnPoint: {fileID: 1806001905}
-  cursor: {fileID: 1827359592}
-  turnUI: {fileID: 1828538383}
   controlUI: {fileID: 273008780}
+  turnUI: {fileID: 1828538383}
+  cursor: {fileID: 1827359592}
   movement1: {fileID: 1057909145}
   movement2: {fileID: 1136382018}
   turn: 0

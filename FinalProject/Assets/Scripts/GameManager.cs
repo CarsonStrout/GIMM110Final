@@ -8,11 +8,14 @@ public class GameManager : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public GameObject spawnPoint;
-    public ARCursor cursor;
-    public TurnUIScript turnUI;
     public GameObject controlUI;
+
+    public TurnUIScript turnUI;
+    public ARCursor cursor;
     public PlayerMovement movement1;
     public PlayerMovement movement2;
+
+    public static GameManager Instance { get; private set; }
 
     public int turn = 0; //0 is player1 turn, 1 is player2 turn, 2 is player1 placement, 3 is player2 placement, 4 is player1 win, 5 is player2 win, 6 is tie game
 
@@ -23,6 +26,12 @@ public class GameManager : MonoBehaviour
     public bool player2Finish = false;
 
     public int previousPlacement;
+
+    void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void PlayerTurns()
     {

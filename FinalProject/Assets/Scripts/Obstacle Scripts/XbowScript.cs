@@ -28,7 +28,7 @@ public class XbowScript : MonoBehaviour
     {
         if (canShoot == true)
         {
-            GameObject go = GameObject.Instantiate(bullet, spawnPosition.transform.position, Quaternion.identity);
+            GameObject go = Instantiate(bullet, spawnPosition.transform.position, Quaternion.identity);
             if (moveRight)
             {
                 go.GetComponent<Bullet>().xSpeed = 7.0f;
