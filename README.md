@@ -10,7 +10,7 @@ Jump Monke Jump
 
 <h4 align="center">An Android application that uses the camera’s AR capabilities to place a competitive, 2-player platformer game in the real world.</h4>
 
-![screenshot](img/JumpMonkeJump.png "Jump Monke Jump")
+![screenshot](img/JumpMonkeJump.PNG "Jump Monke Jump")
 
 <p align="center">
   <a href="#project-overview">Project Overview</a> •
